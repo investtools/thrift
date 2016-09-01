@@ -31,6 +31,7 @@ module Thrift
         rescue => e
           x = ApplicationException.new(ApplicationException::INTERNAL_ERROR, 'Internal error')
           write_error(x, oprot, name, seqid)
+          raise
         end
         true
       else
